@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import { callGemini } from "./ai.js";
+const PORT = process.env.PORT || 3001;
+
 
 const app = express();
 app.use(cors());
@@ -16,6 +18,6 @@ app.post("/api/generate-trip", async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
   console.log(`Backend running on port ${PORT}`);
 });
